@@ -36,14 +36,14 @@
   </head>
   
   <body>
-    <!-- Contenedor para el bot�n -->
+    <!-- Contenedor para el botón -->
     <div id="button-container">
       <button id="changeBackground">Cambiar Fondo</button>
     </div>
 
     <a-scene>
-      <!-- Fondo 360� usando la imagen inicial -->
-      <a-sky id="sky" src="fondo360Espacio.png" rotation="0 -130 0"></a-sky>
+      <!-- Fondo 360º usando la imagen inicial -->
+      <a-sky id="sky" src="Bluesky.jpg" rotation="0 -130 0"></a-sky>
 
       <!-- Avatar en el centro de la escena -->
       <a-assets timeout="30000">
@@ -59,7 +59,7 @@
                   shadow="cast: true; receive: false"></a-entity>
       </a-entity>
 
-      <!-- Iluminaci�n -->
+      <!-- Iluminación -->
       <a-entity light="type: ambient; intensity: 0.5;"></a-entity>
       <a-light type="directional"
                light="castShadow: true;
@@ -80,23 +80,23 @@
     </a-scene>
 
     <script>
-      // Array con las im�genes de fondo
+      // Array con las imágenes de fondo
       const backgrounds = [
-        'Plaza.jpg',
+        'Bluesky.jpg',
         'Office.jpeg',
-        'Bluesky.jpg'
+        'Plaza.jpg'
         
       ];
 
-      // �ndice inicial
+      // Índice inicial
       let currentIndex = 0;
 
       // Referencia al elemento 'a-sky'
       const skyElement = document.getElementById('sky');
 
-      // Evento del bot�n para alternar entre las im�genes
+      // Evento del botón para alternar entre las imágenes
       document.getElementById('changeBackground').addEventListener('click', function () {
-        // Incrementar el �ndice y asegurarse de que vuelva al inicio al alcanzar el final
+        // Incrementar el índice y asegurarse de que vuelva al inicio al alcanzar el final
         currentIndex = (currentIndex + 1) % backgrounds.length;
 
         // Cambiar el atributo 'src' del elemento 'a-sky'
